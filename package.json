@@ -1,0 +1,26 @@
+{
+  "name": "jci",
+  "version": "0.0.1",
+  "description": "CI in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zegapaiz/Z-CI.git"
+  },
+  "keywords": [
+    "CI",
+    "node"
+  ],
+  "author": "z zegapaiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zegapaiz/Z-CI/issues"
+  },
+  "homepage": "https://github.com/Zegapaiz/Z-CI#readme",
+  "dependencies": {
+    "koa": "^2.5.0"
+  }
+}
