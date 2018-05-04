@@ -1,19 +1,34 @@
 import baseConfig from "./config"
-import mdTesk from "./mdTesk"
+import Task from "./Task"
+import Koa from 'koa'
 
-class JCI {
-    testList: Array<number | mdTesk>;
-    constructor(appConfig: object){
-        if (appConfig) appConfig = Object.assign({}, baseConfig, appConfig)
-        this.testList = [12, new mdTesk('asfsfd')]
-        this.init(appConfig)
-    }
-    init(appConfig: object) {
-        console.log(appConfig)
-        console.log(this.testList)
-    }
+interface IUser {
+    name: string;
+    password: string;
+    url: string;
 }
 
-const a = new JCI({success:"asdfa"})
-console.log(a)
-export { JCI }
+export default class JCI {
+    _events: any;
+
+    constructor(appConfig: object){
+        if (appConfig) appConfig = Object.assign({}, baseConfig, appConfig)
+        this.init(appConfig)
+    }
+
+    init(appConfig: object) {
+        console.log(appConfig)
+    }
+
+    addTask(task:IUser){
+        this._events[task.name] = new Task(task)
+    }
+
+    // 参考koa
+    listen(...args: any[]) {
+        return new Koa().listen(...args)
+    }
+
+
+}
+
